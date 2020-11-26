@@ -15,7 +15,7 @@ class BodyWidget extends StatelessWidget {
             style: TextStyle(fontSize: 25),
           ),
           const SizedBox(height: 50),
-          Tree(),
+          FamilyTree(),
           const SizedBox(height: 50),
         ],
       ),
