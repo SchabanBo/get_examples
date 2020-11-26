@@ -3,19 +3,16 @@ import 'package:get/get.dart';
 import 'package:get_page_example/shared/auth/auth_service.dart';
 import 'package:get_page_example/shared/auth/page_auth.dart';
 import 'package:get_page_example/shared/controllers/path_controller.dart';
-import 'package:get_page_example/routes/app_pages.dart' ;
+import 'package:get_page_example/routes/app_pages.dart';
 
 class FamilyTree extends StatelessWidget {
-  final auth = Get.find<AuthController>();
-  final path = Get.find<PathController>();
+  final auth = Get.find<AuthService>();
+  final pathCon = Get.find<PathController>();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [home(), gen0(), gen1(), gen2()],
-      ),
+    return Column(
+      children: [home(), gen0(), gen1(), gen2()],
     );
   }
 
@@ -88,8 +85,13 @@ class FamilyTree extends StatelessWidget {
                     var path = isNone ? '' : name.nameToRoute();
                     switch (gen) {
                       case 0:
-                        path.gen0.value = path;
-                        
+                        pathCon.gen0.value = path;
+                        break;
+                      case 1:
+                        pathCon.gen1.value = path;
+                        break;
+                      case 2:
+                        pathCon.gen2.value = path;
                         break;
                       default:
                     }
@@ -98,14 +100,16 @@ class FamilyTree extends StatelessWidget {
               ),
               isNone
                   ? Container()
-                  : Obx(() => Checkbox(
-                        activeColor: Colors.amber,
-                        value: auth.auth.firstWhere((element) => element.name == name).isAuthed,
-                        onChanged: (v) {
-                          auth.auth.firstWhere((element) => element.name == name).isAuthed = v;
-                          auth.auth.refresh();
-                        },
-                      ))
+                  : ObxValue<RxBool>(
+                      (v) => Checkbox(
+                            activeColor: Colors.amber,
+                            value: v.value,
+                            onChanged: (va) {
+                              v.value = va;
+                              auth.auth.firstWhere((element) => element.name == name).isAuthed = va;
+                            },
+                          ),
+                      auth.auth.firstWhere((element) => element.name == name).isAuthed.obs)
             ],
           ),
         ),
