@@ -1,3 +1,3 @@
 abstract class IHomeRepository {
-   Future<String> getPageName();
+   Future<dynamic> getPageName();
 }

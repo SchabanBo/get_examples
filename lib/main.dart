@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_page_example/shared/widgets/body.dart';
 import 'package:get_page_example/routes/app_pages.dart';
 import 'package:get_page_example/shared/logger/logger_utils.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       logWriterCallback: Logger.write,
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      theme: ThemeData.dark(),
     );
   }
 }

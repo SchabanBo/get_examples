@@ -3,6 +3,7 @@
 // For easy and so that the example dose not get complated with files and directory this file will represent all page class
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_page_example/shared/widgets/body.dart';
 
 class HomeBinding extends Bindings {
   @override
@@ -12,20 +13,20 @@ class HomeBinding extends Bindings {
   }
 }
 abstract class IHomeRepository {
-   Future<String> getPageName();
+   Future<dynamic> getPageName();
 }
 
 
 class HomeRepository implements IHomeRepository {
   @override
-  Future<String> getPageName() => 2.delay(() => 'Home Page');
+  Future<dynamic> getPageName() => 2.delay(() => 'Home Page');
 }
 
 class HomeController extends GetxController {
   HomeController({this.homeRepository});
   final IHomeRepository homeRepository;
 
-  final name = ''.obs;
+  final name = 'loading ..'.obs;
   @override
   void onInit() {
     super.onInit();
@@ -40,7 +41,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Obx(() => Text(controller.name.value))),
-      body: Container(),
+      body: BodyWidget(),
     );
   }
 }

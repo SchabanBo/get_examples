@@ -24,10 +24,17 @@ So the Family tree will be like this:
             -  Emma
     - The Gellers
       - Jack
+        - Monica
+          -  Jack-Geller-Bing 
+          - Erica 
+        - Ross
+          - Emma
+          - Bin
       - Judy
         - Monica
           -  Jack-Geller-Bing 
           - Erica 
         - Ross
           - Emma
+          - Bin
 

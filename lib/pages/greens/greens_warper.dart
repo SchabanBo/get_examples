@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_page_example/shared/widgets/body.dart';
 
 class GellersBinding extends Bindings {
   @override
@@ -12,19 +13,19 @@ class GellersBinding extends Bindings {
 }
 
 abstract class IGellersRepository {
-  Future<String> getPageName();
+  Future<dynamic> getPageName();
 }
 
 class GellersRepository implements IGellersRepository {
   @override
-  Future<String> getPageName() => 2.delay(() => 'Gellers Page');
+  Future<dynamic> getPageName() => 2.delay(() => 'Gellers Page');
 }
 
 class GellersController extends GetxController {
   GellersController({this.gellersRepository});
   final IGellersRepository gellersRepository;
 
-  final name = ''.obs;
+  final name = 'loading ..'.obs;
   @override
   void onInit() {
     super.onInit();
@@ -37,7 +38,7 @@ class GellersView extends GetView<GellersController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Obx(() => Text(controller.name.value))),
-      body: Container(),
+      body: BodyWidget(),
     );
   }
 }
