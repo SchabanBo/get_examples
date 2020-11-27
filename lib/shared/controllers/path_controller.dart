@@ -9,14 +9,17 @@ class PathController extends GetxController {
     if (gen0.value.isEmpty) {
       return '/home';
     }
+    final g0 = (gen0.value == '/jack' || gen0.value == '/judy')
+        ? '/gellers${gen0.value}'
+        : '/greens${gen0.value}';
     if (gen1.value.isEmpty) {
-      return '/home${gen0.value}';
+      return '/home$g0';
     }
     if (gen2.value.isEmpty) {
-      return '/home${gen0.value}${gen1.value}';
+      return '/home$g0${gen1.value}';
     }
-    return '/home${gen0.value}${gen1.value}${gen2.value}';
+    return '/home$g0${gen1.value}${gen2.value}';
   }
 
-  void go() => Get.toNamed(path);
+  void go() => Get.offNamed(path);
 }

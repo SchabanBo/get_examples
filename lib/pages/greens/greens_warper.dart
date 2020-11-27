@@ -4,40 +4,44 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_page_example/shared/widgets/body.dart';
 
-class GellersBinding extends Bindings {
+class GreensBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<IGellersRepository>(() => GellersRepository());
-    Get.lazyPut(() => GellersController(gellersRepository: Get.find()));
+    Get.lazyPut<IGreensRepository>(() => GreensRepository());
+    Get.lazyPut(() => GreensController(greensRepository: Get.find()));
   }
 }
 
-abstract class IGellersRepository {
+abstract class IGreensRepository {
   Future<dynamic> getPageName();
 }
 
-class GellersRepository implements IGellersRepository {
+class GreensRepository implements IGreensRepository {
   @override
-  Future<dynamic> getPageName() => 2.delay(() => 'Gellers Page');
+  Future<dynamic> getPageName() => 2.delay(() => 'Greens Page');
 }
 
-class GellersController extends GetxController {
-  GellersController({this.gellersRepository});
-  final IGellersRepository gellersRepository;
+class GreensController extends GetxController {
+  GreensController({this.greensRepository});
+  final IGreensRepository greensRepository;
 
   final name = 'loading ..'.obs;
   @override
   void onInit() {
     super.onInit();
-    gellersRepository.getPageName().then((value) => name.value = value);
+    greensRepository.getPageName().then((value) => name.value = value);
   }
 }
 
-class GellersView extends GetView<GellersController> {
+class GreensView extends GetView<GreensController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Obx(() => Text(controller.name.value))),
+      appBar: AppBar(title: Obx(() => Text(controller.name.value,
+              style: TextStyle(
+                  color: controller.name.value == 'loading ..'
+                      ? Colors.red
+                      : Colors.amber)))),
       body: BodyWidget(),
     );
   }

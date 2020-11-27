@@ -14,7 +14,7 @@ class NotFound extends StatelessWidget {
             RaisedButton(
               child: Text('Go To Home', style: TextStyle(fontSize: 30)),
               color: Colors.amber,
-              onPressed: () => Get.back(),
+              onPressed: () => Get.offNamed('/home'),
             )
           ],
         ),

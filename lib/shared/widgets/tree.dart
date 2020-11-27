@@ -25,7 +25,8 @@ class FamilyTree extends StatelessWidget {
           Flexible(
             flex: 4,
             child: Card(
-                child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               getPerson('Judy', 0),
               getPerson('Jack', 0),
             ])),
@@ -33,7 +34,8 @@ class FamilyTree extends StatelessWidget {
           Flexible(
             flex: 3,
             child: Card(
-                child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               getPerson('Sandra', 0),
               getPerson('Leonardo', 0),
             ])),
@@ -55,7 +57,7 @@ class FamilyTree extends StatelessWidget {
   Widget gen2() => Row(
         children: [
           getPerson('None', 2),
-          getPerson('Jack j', 2),
+          getPerson('Jackj', 2),
           getPerson('Erica', 2),
           getPerson('Bin', 2),
           getPerson('Emma', 2, flex: 2),
@@ -106,10 +108,15 @@ class FamilyTree extends StatelessWidget {
                             value: v.value,
                             onChanged: (va) {
                               v.value = va;
-                              auth.auth.firstWhere((element) => element.name == name).isAuthed = va;
+                              auth.auth
+                                  .firstWhere((element) => element.name == name)
+                                  .isAuthed = va;
                             },
                           ),
-                      auth.auth.firstWhere((element) => element.name == name).isAuthed.obs)
+                      auth.auth
+                          .firstWhere((element) => element.name == name)
+                          .isAuthed
+                          .obs)
             ],
           ),
         ),

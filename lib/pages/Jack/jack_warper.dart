@@ -37,7 +37,11 @@ class JackView extends GetView<JackController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Obx(() => Text(controller.name.value))),
+      appBar: AppBar(title: Obx(() => Text(controller.name.value,
+              style: TextStyle(
+                  color: controller.name.value == 'loading ..'
+                      ? Colors.red
+                      : Colors.amber)))),
       body: BodyWidget(),
     );
   }
