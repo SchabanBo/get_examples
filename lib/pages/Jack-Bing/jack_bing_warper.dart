@@ -1,4 +1,5 @@
-// For easy and so that the example dose not get complated with files and directory this file will represent all page class
+// For easy and so that the example dose not get complated with
+// files and directory this file will represent all page class
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,6 +13,7 @@ class JackBingBinding extends Bindings {
   }
 }
 
+// ignore: one_member_abstracts
 abstract class IJackBingRepository {
   Future<dynamic> getPageName();
 }
@@ -29,7 +31,9 @@ class JackBingController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    jackBingRepository.getPageName().then((value) => name.value = value);
+    jackBingRepository
+        .getPageName()
+        .then((value) => name.value = value.toString());
   }
 }
 
@@ -37,7 +41,8 @@ class JackBingView extends GetView<JackBingController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Obx(() => Text(controller.name.value,
+      appBar: AppBar(
+          title: Obx(() => Text(controller.name.value,
               style: TextStyle(
                   color: controller.name.value == 'loading ..'
                       ? Colors.red

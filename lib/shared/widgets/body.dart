@@ -32,7 +32,7 @@ class BodyWidget extends StatelessWidget {
                   RaisedButton(
                     child: Text('Go'),
                     color: Colors.amber,
-                    onPressed: () => pathCon.go(),
+                    onPressed: pathCon.go,
                   )
                 ],
               )),

@@ -1,6 +1,7 @@
 // This Class is just a template for Home Page to use with athoer pages
 
-// For easy and so that the example dose not get complated with files and directory this file will represent all page class
+// For easy and so that the example dose not get complated with
+// files and directory this file will represent all page class
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_page_example/shared/widgets/body.dart';
@@ -12,6 +13,7 @@ class HomeBinding extends Bindings {
     Get.lazyPut(() => HomeController(homeRepository: Get.find()));
   }
 }
+// ignore: one_member_abstracts
 abstract class IHomeRepository {
    Future<dynamic> getPageName();
 }
@@ -30,7 +32,7 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    homeRepository.getPageName().then((value) => name.value = value);
+    homeRepository.getPageName().then((value) => name.value = value.toString());
   }
 }
 

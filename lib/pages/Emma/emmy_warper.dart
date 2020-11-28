@@ -1,4 +1,5 @@
-// For easy and so that the example dose not get complated with files and directory this file will represent all page class
+// For easy and so that the example dose not get complated with
+// files and directory this file will represent all page class
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,6 +13,7 @@ class EmmaBinding extends Bindings {
   }
 }
 
+// ignore: one_member_abstracts
 abstract class IEmmaRepository {
   Future<dynamic> getPageName();
 }
@@ -29,7 +31,7 @@ class EmmaController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    emmaRepository.getPageName().then((value) => name.value = value);
+    emmaRepository.getPageName().then((value) => name.value = value.toString());
   }
 }
 
@@ -37,7 +39,8 @@ class EmmaView extends GetView<EmmaController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Obx(() => Text(controller.name.value,
+      appBar: AppBar(
+          title: Obx(() => Text(controller.name.value,
               style: TextStyle(
                   color: controller.name.value == 'loading ..'
                       ? Colors.red

@@ -9,6 +9,6 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    homeRepository.getPageName().then((value) => name.value = value);
+    homeRepository.getPageName().then((value) => name.value = value.toString());
   }
 }
