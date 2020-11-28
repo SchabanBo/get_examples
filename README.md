@@ -12,6 +12,7 @@
     - [OnPageBuildStart](#onpagebuildstart)
     - [OnPageBuilt](#onpagebuilt)
     - [OnPageDispose](#onpagedispose)
+  - [TODO](#todo)
 
 ## GetPage Children
 
@@ -261,3 +262,8 @@ This function will be called right after the GetPage.page function is called and
 ### OnPageDispose
 
 This function will be called right after disposing all the related objects (Controllers, views, ...) of the page.
+
+
+## TODO
+
+- [ ] Add Tests.
