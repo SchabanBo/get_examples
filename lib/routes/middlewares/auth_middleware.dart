@@ -5,7 +5,7 @@ import 'package:get_page_example/shared/auth/auth_service.dart';
 class AuthMiddleware extends GetMiddleware {
   final auth = Get.find<AuthService>();
   @override
-  RouteSettings redirect() {
+  RouteSettings redirect(String route) {
     print('Is authed: ${auth.authed.value}');
     return auth.authed.value ? null : RouteSettings(name: '/login');
   }

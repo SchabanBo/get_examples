@@ -5,9 +5,13 @@
 - [get_page_example](#get_page_example)
   - [GetPage Children](#getpage-children)
   - [GetPage Middleware](#getpage-middleware)
-    - [priority](#priority)
+    - [Priority](#priority)
     - [Redirect](#redirect)
     - [onPageCalled](#onpagecalled)
+    - [OnBindingsStart](#onbindingsstart)
+    - [OnPageBuildStart](#onpagebuildstart)
+    - [OnPageBuilt](#onpagebuilt)
+    - [OnPageDispose](#onpagedispose)
 
 ## GetPage Children
 
@@ -182,7 +186,9 @@ So with any small change on any father in the tree all children will be updated.
 
 The GetPage has now new property that takes a list of GetMiddleWare and run them in the specific order.
 
-### priority
+**Note**: When GetPage has a Middlewares, all the children of this page will have the same middlewares automatically.
+
+### Priority
 
 The Order of the Middlewares to run can pe set by the priority in the GetMiddleware.
 
@@ -217,3 +223,38 @@ GetPage onPageCalled(GetPage page) {
   return page.copyWith(title: 'Wellcome ${authService.UserName}');
 }
 ```
+
+### OnBindingsStart
+
+This function will be called right before the Bindings are initialize.
+Here you can change Bindings for this page.
+
+```dart
+List<Bindings> onBindingsStart(List<Bindings> bindings) {
+  final authService = Get.find<AuthService>();
+  if (authService.isAdmin) {
+    bindings.add(AdminBinding());
+  }
+  return bindings;
+}
+```
+
+### OnPageBuildStart
+
+This function will be called right after the Bindings are initialize.
+Here you can do something after that you created the bindings and before creating the page widget.
+
+```dart
+GetPageBuilder onPageBuildStart(GetPageBuilder page) {
+  print('bindings are ready');
+  return page;
+}
+```
+
+### OnPageBuilt
+
+This function will be called right after the GetPage.page function is called and will give you the result of the function. and take the widget that will be showed.
+
+### OnPageDispose
+
+This function will be called right after disposing all the related objects (Controllers, views, ...) of the page.
