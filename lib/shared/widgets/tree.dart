@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_page_example/shared/auth/auth_service.dart';
-import 'package:get_page_example/shared/auth/page_auth.dart';
 import 'package:get_page_example/shared/controllers/path_controller.dart';
 import 'package:get_page_example/routes/app_pages.dart';
 
@@ -67,7 +66,7 @@ class FamilyTree extends StatelessWidget {
 
   Widget getPerson(String name, int gen, {int flex = 1}) {
     final isNone = name == 'None';
-    auth.auth.add(PageAuth(name));
+    final route = name.nameToRoute();
     return Expanded(
       flex: flex,
       child: Card(
@@ -75,49 +74,26 @@ class FamilyTree extends StatelessWidget {
         margin: EdgeInsets.all(8),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              Expanded(
-                child: FlatButton(
-                  child: Text(
-                    name,
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  onPressed: () {
-                    var path = isNone ? '' : name.nameToRoute();
-                    switch (gen) {
-                      case 0:
-                        pathCon.gen0.value = path;
-                        break;
-                      case 1:
-                        pathCon.gen1.value = path;
-                        break;
-                      case 2:
-                        pathCon.gen2.value = path;
-                        break;
-                      default:
-                    }
-                  },
-                ),
-              ),
-              isNone
-                  ? Container()
-                  : ObxValue<RxBool>(
-                      (v) => Checkbox(
-                            activeColor: Colors.amber,
-                            value: v.value,
-                            onChanged: (va) {
-                              v.value = va;
-                              auth.auth
-                                  .firstWhere((element) => element.name == name)
-                                  .isAuthed = va;
-                            },
-                          ),
-                      auth.auth
-                          .firstWhere((element) => element.name == name)
-                          .isAuthed
-                          .obs)
-            ],
+          child: FlatButton(
+            child: Text(
+              name,
+              style: TextStyle(fontSize: 18),
+            ),
+            onPressed: () {
+              final path = isNone ? '' : route;
+              switch (gen) {
+                case 0:
+                  pathCon.gen0.value = path;
+                  break;
+                case 1:
+                  pathCon.gen1.value = path;
+                  break;
+                case 2:
+                  pathCon.gen2.value = path;
+                  break;
+                default:
+              }
+            },
           ),
         ),
       ),

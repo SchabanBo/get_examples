@@ -15,6 +15,8 @@ import 'package:get_page_example/pages/gellers/gellers_warper.dart';
 import 'package:get_page_example/pages/greens/greens_warper.dart';
 import 'package:get_page_example/pages/home/bindings/home_binding.dart';
 import 'package:get_page_example/pages/home/views/home_view.dart';
+import 'package:get_page_example/pages/login/login_view.dart';
+import 'package:get_page_example/routes/middlewares/auth_middleware.dart';
 
 part 'app_routes.dart';
 
@@ -30,7 +32,11 @@ class AppPages {
         children: [
           theGreens,
           theGellers,
-        ])
+        ],
+        middlewares: [
+          AuthMiddleware()
+        ]),
+    GetPage(name: '/login', page: () => LoginView())
   ];
 
   static final theGreens = GetPage(

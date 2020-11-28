@@ -1,8 +1,5 @@
-import 'package:get_page_example/shared/auth/page_auth.dart';
+import 'package:get/get.dart';
 
-class AuthService {
-  final auth = <PageAuth>[];
-
-  bool isActive(String name) =>
-      auth.firstWhere((element) => element.name == name).isAuthed;
+class AuthService extends GetxController {
+  final authed = true.obs;
 }

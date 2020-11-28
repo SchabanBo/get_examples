@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_page_example/shared/auth/auth_service.dart';
 import 'package:get_page_example/shared/controllers/path_controller.dart';
 import 'package:get_page_example/shared/widgets/tree.dart';
 
@@ -37,6 +38,25 @@ class BodyWidget extends StatelessWidget {
                 ],
               )),
           const SizedBox(height: 25),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ObxValue<RxBool>(
+                  (v) => Checkbox(
+                        activeColor: Colors.amber,
+                        value: v.value,
+                        onChanged: (va) {
+                          v.value = va;
+                        },
+                      ),
+                  Get.find<AuthService>().authed),
+              const SizedBox(width: 25),
+              Text(
+                'Is Auth',
+                style: TextStyle(fontSize: 25),
+              ),
+            ],
+          ),
           Expanded(child: FamilyTree()),
         ],
       ),
