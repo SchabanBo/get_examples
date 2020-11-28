@@ -103,7 +103,9 @@ and with `GetPage` we can represent the Gellers tree like this.
       binding: EmmaBinding(),
     )
 ```
+
 or with the new children feature
+
 ```dart
  GetPage(
       name: '/gellers',
@@ -204,7 +206,7 @@ those middlewares will be run in this order **-8 => 2 => 4 => 5**
 
 ### Redirect
 
-This function will be called when the page of the called route is being searched for. It take RouteSettings as a result an redirect to the new settings or give it null and there will be no redirecting.
+This function will be called when the page of the called route is being searched for. It takes RouteSettings as a result to redirect to. Or give it null and there will be no redirecting.
 
 ```dart
 GetPage redirect( ) {
@@ -212,6 +214,7 @@ GetPage redirect( ) {
   return authService.authed.value ? null : RouteSettings(name: '/login')
 }
 ```
+
 ### onPageCalled
 
 This function will be called when this Page is called before anything created
@@ -220,7 +223,7 @@ you can use it to change something about the page or give it new page
 ```dart
 GetPage onPageCalled(GetPage page) {
   final authService = Get.find<AuthService>();
-  return page.copyWith(title: 'Wellcome ${authService.UserName}');
+  return page.copyWith(title: 'Welcome ${authService.UserName}');
 }
 ```
 
