@@ -3,12 +3,31 @@ import 'package:get/get.dart';
 import 'package:get_page_example/shared/auth/auth_service.dart';
 
 class AuthMiddleware extends GetMiddleware {
+  final auth = Get.find<AuthService>();
   @override
   RouteSettings redirect() {
-    final isAuthed = Get.find<AuthService>().authed.value;
-    print('Is authed: $isAuthed');
-    return isAuthed ? null : RouteSettings(name: '/login');
+    print('Is authed: ${auth.authed.value}');
+    return auth.authed.value ? null : RouteSettings(name: '/login');
   }
 
-  
+  @override
+  GetPage onPageCalled(GetPage page) {
+    return page.copyWith(
+        transition: auth.authed.value ? Transition.fade : Transition.upToDown,
+        transitionDuration: 1.seconds);
+  }
+
+  @override
+  List<Bindings> onBindingsStart(List<Bindings> bindings) {
+    if (!auth.authed.value) {
+      bindings = <Bindings>[];
+    }
+    return super.onBindingsStart(bindings);
+  }
+
+  @override
+  Widget onPageBuilt(Widget page) {
+    print(page.runtimeType);
+    return page;
+  }
 }

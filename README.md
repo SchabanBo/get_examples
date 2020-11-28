@@ -5,6 +5,9 @@
 - [get_page_example](#get_page_example)
   - [GetPage Children](#getpage-children)
   - [GetPage Middleware](#getpage-middleware)
+    - [priority](#priority)
+    - [Redirect](#redirect)
+    - [onPageCalled](#onpagecalled)
 
 ## GetPage Children
 
@@ -176,3 +179,41 @@ or with the new children feature
 So with any small change on any father in the tree all children will be updated.
 
 ## GetPage Middleware
+
+The GetPage has now new property that takes a list of GetMiddleWare and run them in the specific order.
+
+### priority
+
+The Order of the Middlewares to run can pe set by the priority in the GetMiddleware.
+
+```dart
+final middlewares = [
+  GetMiddleware(priority: 2),
+  GetMiddleware(priority: 5),
+  GetMiddleware(priority: 4),
+  GetMiddleware(priority: -8),
+];
+```
+those middlewares will be run in this order **-8 => 2 => 4 => 5**
+
+### Redirect
+
+This function will be called when the page of the called route is being searched for. It take RouteSettings as a result an redirect to the new settings or give it null and there will be no redirecting.
+
+```dart
+GetPage redirect( ) {
+  final authService = Get.find<AuthService>();
+  return authService.authed.value ? null : RouteSettings(name: '/login')
+}
+```
+### onPageCalled
+
+This function will be called when this Page is called before anything created
+you can use it to change something about the page or give it new page
+
+```dart
+GetPage onPageCalled(GetPage page) {
+  final authService = Get.find<AuthService>();
+  return page.copyWith(title: 'Wellcome ${authService.UserName}');
+}
+```
