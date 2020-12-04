@@ -1,18 +1,18 @@
 import 'package:get/get.dart';
-import 'package:get_page_example/pages/Amy/amy_warper.dart';
-import 'package:get_page_example/pages/Ben/ben_warper.dart';
-import 'package:get_page_example/pages/Emma/emmy_warper.dart';
-import 'package:get_page_example/pages/Erica/erica_warper.dart';
-import 'package:get_page_example/pages/Jack-Bing/jack_bing_warper.dart';
-import 'package:get_page_example/pages/Jack/jack_warper.dart';
-import 'package:get_page_example/pages/Jill/jill_warper.dart';
-import 'package:get_page_example/pages/Judy/judy_warper.dart';
-import 'package:get_page_example/pages/Monica/monica_warper.dart';
-import 'package:get_page_example/pages/Rachel/rachel_warper.dart';
-import 'package:get_page_example/pages/Ross/ross_warper.dart';
-import 'package:get_page_example/pages/Sandra/sandra_warper.dart';
-import 'package:get_page_example/pages/gellers/gellers_warper.dart';
-import 'package:get_page_example/pages/greens/greens_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/Amy/amy_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/Ben/ben_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/Emma/emmy_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/Erica/erica_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/Jack-Bing/jack_bing_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/Jack/jack_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/Jill/jill_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/Judy/judy_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/Monica/monica_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/Rachel/rachel_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/Ross/ross_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/Sandra/sandra_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/gellers/gellers_warper.dart';
+import 'package:get_page_example/pages/GetPageExample/greens/greens_warper.dart';
 import 'package:get_page_example/pages/home/bindings/home_binding.dart';
 import 'package:get_page_example/pages/home/views/home_view.dart';
 import 'package:get_page_example/pages/login/login_view.dart';
@@ -164,82 +164,4 @@ class AppPages {
                   ])
             ])
       ]);
-
-  static final test = [
-    GetPage(
-      name: '/gellers',
-      page: () => GellersView(),
-      binding: GellersBinding(),
-    ),
-    GetPage(
-      name: '/gellers/jack',
-      page: () => JackView(),
-      binding: JackBinding(),
-    ),
-    GetPage(
-      name: '/gellers/jack/monica',
-      page: () => MonicaView(),
-      binding: MonicaBinding(),
-    ),
-    GetPage(
-      name: '/gellers/jack/monica/jackj',
-      page: () => JackBingView(),
-      binding: JackBingBinding(),
-    ),
-    GetPage(
-      name: '/gellers/jack/monica/erica',
-      page: () => EricaView(),
-      binding: EricaBinding(),
-    ),
-    GetPage(
-      name: '/gellers/jack/ross',
-      page: () => RossView(),
-      binding: RossBinding(),
-    ),
-    GetPage(
-      name: '/gellers/jack/ross/bin',
-      page: () => BenView(),
-      binding: BenBinding(),
-    ),
-    GetPage(
-      name: '/gellers/jack/ross/emma',
-      page: () => EmmaView(),
-      binding: EmmaBinding(),
-    ),
-    GetPage(
-      name: '/gellers/judy',
-      page: () => JudyView(),
-      binding: JudyBinding(),
-    ),
-    GetPage(
-      name: '/gellers/judy/monica',
-      page: () => MonicaView(),
-      binding: MonicaBinding(),
-    ),
-    GetPage(
-      name: '/gellers/judy/monica/jackj',
-      page: () => JackBingView(),
-      binding: JackBingBinding(),
-    ),
-    GetPage(
-      name: '/gellers/judy/monica/erica',
-      page: () => EricaView(),
-      binding: EricaBinding(),
-    ),
-    GetPage(
-      name: '/gellers/judy/ross',
-      page: () => RossView(),
-      binding: RossBinding(),
-    ),
-    GetPage(
-      name: '/gellers/judy/ross/bin',
-      page: () => BenView(),
-      binding: BenBinding(),
-    ),
-    GetPage(
-      name: '/gellers/judy/ross/emma',
-      page: () => EmmaView(),
-      binding: EmmaBinding(),
-    )
-  ];
 }
