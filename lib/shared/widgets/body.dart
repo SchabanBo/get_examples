@@ -13,7 +13,7 @@ class BodyWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 50),
+          const SizedBox(height: 25),
           getContainer(
               'Current Route',
               Text(
@@ -57,6 +57,9 @@ class BodyWidget extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: 50),
+          RaisedButton(
+              child: Text('Back Home'), onPressed: () => Get.offNamed('/home')),
           Expanded(child: FamilyTree()),
         ],
       ),

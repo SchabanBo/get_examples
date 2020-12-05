@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_page_example/shared/widgets/body.dart';
 import 'package:get_page_example/pages/home/controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Obx(() => Text(controller.name.value,
-              style: TextStyle(
-                  color: controller.name.value == 'loading ..'
-                      ? Colors.red
-                      : Colors.amber)))),
-      body: BodyWidget(),
+      appBar: AppBar(title: Text('Get Examples')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            RaisedButton(
+              child: Text('GetPage & GetMiddleware',
+                  style: TextStyle(fontSize: 18)),
+              onPressed: () => Get.toNamed('/greens'),
+            ),
+            RaisedButton(
+              child: Text('GetResponsiveView', style: TextStyle(fontSize: 18)),
+              onPressed: () => Get.toNamed('/responsive'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

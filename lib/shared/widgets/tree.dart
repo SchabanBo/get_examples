@@ -11,11 +11,10 @@ class FamilyTree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [home(), gen0(), gen1(), gen2()],
+      children: [gen0(), gen1(), gen2()],
     );
   }
 
-  Widget home() => Row(children: [getPerson('Home', -1, flex: 7)]);
 
   Widget gen0() => Row(
         mainAxisAlignment: MainAxisAlignment.center,
