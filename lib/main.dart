@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
       logWriterCallback: Logger.write,
       initialRoute: AppPages.init,
       getPages: AppPages.routes,
-      theme: ThemeData.dark(),
     );
   }
 }

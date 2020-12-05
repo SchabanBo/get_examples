@@ -8,21 +8,25 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       appBar: AppBar(title: Text('Get Examples')),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        child: Wrap(
           children: [
-            RaisedButton(
-              child: Text('GetPage & GetMiddleware',
-                  style: TextStyle(fontSize: 18)),
-              onPressed: () => Get.toNamed('/greens'),
-            ),
-            RaisedButton(
-              child: Text('GetResponsiveView', style: TextStyle(fontSize: 18)),
-              onPressed: () => Get.toNamed('/responsive'),
-            ),
+            _getCard('GetPage & GetMiddleware', '/greens'),
+            _getCard('GetResponsiveView', '/responsive'),
+            _getCard('Counter App Example', '/counter'),
           ],
         ),
       ),
     );
   }
+
+  Widget _getCard(String name, String route) => Card(
+    margin: EdgeInsets.all(15),
+    child: InkWell(
+      onTap: () => Get.toNamed(route),
+      child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Text(name, style: TextStyle(fontSize: 25)),
+          ),
+    ),
+  );
 }
