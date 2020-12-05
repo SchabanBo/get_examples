@@ -12,6 +12,8 @@
     - [OnPageBuildStart](#onpagebuildstart)
     - [OnPageBuilt](#onpagebuilt)
     - [OnPageDispose](#onpagedispose)
+  - [GetResponsiveView](#getresponsiveview)
+    - [How to use it](#how-to-use-it)
   - [TODO](#todo)
 
 ## GetPage Children
@@ -262,6 +264,30 @@ This function will be called right after the GetPage.page function is called and
 ### OnPageDispose
 
 This function will be called right after disposing all the related objects (Controllers, views, ...) of the page.
+
+## GetResponsiveView
+
+Extend this widget to build responsive view.
+this widget contains the `screen` property that have all
+information about the screen size and type.
+
+### How to use it
+
+You have two options to build it.
+
+- with `builder` method you return the widget to build.
+- with methods `desktop`, `tablet`,`phone`, `watch`. the specific
+method will be built when the screen type matches the method
+when the screen is [ScreenType.Tablet] the `tablet` method
+will be exuded and so on.
+
+**Note:** If you use this method please set the property `alwaysUseBuilder` to `false`
+
+With `settings` property you can set the width limit for the screen types.
+
+![example](./docs/example.gif)
+Code to this screen
+[code](lib/pages/responsive_example/responsive_view.dart)
 
 
 ## TODO
