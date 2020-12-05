@@ -16,3 +16,7 @@ will be exuded and so on.
 **Note:** If you use this method please set the property `alwaysUseBuilder` to `false`
 
 With `settings` property you can set the width limit for the screen types.
+
+![example](https://github.com/SchabanBo/get_page_example/blob/master/docs/Example.gif?raw=true)
+Code to this screen
+[code](https://github.com/SchabanBo/get_page_example/blob/master/lib/pages/responsive_example/responsive_view.dart)

@@ -3,7 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_page_example/shared/widgets/body.dart';
+import 'package:get_page_example/pages/get_page_example/widgets/body.dart';
 
 class MonicaBinding extends Bindings {
   @override

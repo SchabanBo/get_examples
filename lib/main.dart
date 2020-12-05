@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_page_example/pages/get_page_example/auth/auth_service.dart';
+import 'package:get_page_example/pages/get_page_example/controllers/path_controller.dart';
 import 'package:get_page_example/pages/not_found/not_found_view.dart';
 import 'package:get_page_example/routes/app_pages.dart';
-import 'package:get_page_example/shared/auth/auth_service.dart';
-import 'package:get_page_example/shared/controllers/path_controller.dart';
 import 'package:get_page_example/shared/logger/logger_utils.dart';
 
 void main() {
