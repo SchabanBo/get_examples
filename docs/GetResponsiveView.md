@@ -13,7 +13,6 @@ You have two options to build it.
 method will be built when the screen type matches the method
 when the screen is [ScreenType.Tablet] the `tablet` method
 will be exuded and so on.
-
 **Note:** If you use this method please set the property `alwaysUseBuilder` to `false`
 
 With `settings` property you can set the width limit for the screen types.
