@@ -1,34 +1,24 @@
 # Get Examples
 
-- [get_examples](#get_examples)
-  - [GetPage Children](#getpage-children)
-  - [GetPage Middleware](#getpage-middleware)
-    - [Priority](#priority)
-    - [Redirect](#redirect)
-    - [onPageCalled](#onpagecalled)
-    - [OnBindingsStart](#onbindingsstart)
-    - [OnPageBuildStart](#onpagebuildstart)
-    - [OnPageBuilt](#onpagebuilt)
-    - [OnPageDispose](#onpagedispose)
+- [Get Examples](#get-examples)
+  - [Counter App](#counter-app)
+  - [GetPage & GetMiddleware](#getpage--getmiddleware)
   - [GetResponsiveView](#getresponsiveview)
-    - [How to use it](#how-to-use-it)
-  - [TODO](#todo)
 
+## Counter App
 
-## GetPage
+The super counter app With Getx.
+[Code](https://github.com/SchabanBo/get_examples/blob/master/lib/pages/counter_example/counter_example.dart)
 
-Example how to work with the GetPage `children` property.
+## GetPage & GetMiddleware
+
+Example how to work with the GetPage `children` property and how dose `GetMiddleware` works and how to use them.
 
 [ToDocs](https://github.com/SchabanBo/get_examples/tree/master/docs/GetPage.md)
-
-## GetMiddleware
-
-Example how to `GetMiddleware` works and how to use them.
-
-[ToDocs](https://github.com/SchabanBo/get_examples/tree/master/docs/GetMiddleware.md)
+[Code](https://github.com/SchabanBo/get_examples/tree/master/docs/GetPage.md)
 
 ## GetResponsiveView
 
 Example how to work with the `GetResponsiveView` widget.
 
-[ToDocs](https://github.com/SchabanBo/get_examples/tree/master/docs/GetPage.md)
+[ToDocs](https://github.com/SchabanBo/get_examples/tree/master/docs/GetResponsiveView.md)
