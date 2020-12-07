@@ -18,6 +18,7 @@ import 'package:get_page_example/routes/middlewares/auth_middleware.dart';
 class GetPageExample {
   static final theGreens = GetPage(
       name: '/greens',
+      title: 'GetPage & GetMiddleware (Greens)',
       page: () => GreensView(),
       binding: GreensBinding(),
       middlewares: [
@@ -72,6 +73,7 @@ class GetPageExample {
 
   static final theGellers = GetPage(
       name: '/gellers',
+      title: 'GetPage & GetMiddleware (Gellers)',
       page: () => GellersView(),
       binding: GellersBinding(),
       middlewares: [

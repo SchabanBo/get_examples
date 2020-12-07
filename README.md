@@ -2,6 +2,7 @@
 
 - [Get Examples](#get-examples)
   - [Counter App](#counter-app)
+  - [Simple Navigation](#simple-navigation)
   - [GetPage & GetMiddleware](#getpage--getmiddleware)
   - [GetResponsiveView](#getresponsiveview)
 
@@ -9,6 +10,11 @@
 
 The super counter app With Getx.
 [Code](https://github.com/SchabanBo/get_examples/blob/master/lib/pages/counter_example/counter_example.dart)
+
+## Simple Navigation 
+
+Example of simple navigation between two pages and giving a result back.
+[Code](https://github.com/SchabanBo/get_examples/blob/master/lib/pages/simple_navigation_example/simple_navigation.dart)
 
 ## GetPage & GetMiddleware
 
