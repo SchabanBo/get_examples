@@ -28,3 +28,11 @@ Example how to work with the GetPage `children` property and how dose `GetMiddle
 Example how to work with the `GetResponsiveView` widget.
 
 [ToDocs](https://github.com/SchabanBo/get_examples/tree/master/docs/GetResponsiveView.md)
+
+##TODO:
+- [ ] Add Dialog and snakbar.
+- [ ] Change Theme.
+- [ ] Local State Widgets.
+- [ ] Add Utils.
+- [ ] GetConnect.
+- [ ] Locals.
