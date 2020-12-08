@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:get_page_example/pages/counter_example/counter_example.dart';
-import 'package:get_page_example/pages/get_page_example/login/login_view.dart';
 import 'package:get_page_example/pages/get_page_example/routes.dart';
 
 import 'package:get_page_example/pages/home/bindings/home_binding.dart';
@@ -19,12 +18,13 @@ class AppPages {
         page: () => HomeView(),
         title: 'Home',
         binding: HomeBinding()),
-    GetPageExample.theGreens,
-    GetPageExample.theGellers,
-    GetPage(name: '/login',title: 'Login', page: () => LoginView()),
-    GetPage(name: '/responsive',title: 'Get Responsive View', page: () => ResponsiveView()),
+    GetPageExample.getPageExample,
+    //GetPage(name: '/responsive',title: 'Get Responsive View', page: () => ResponsiveView()),
     GetPage(
-        name: '/counter', page: () => CounterView(),title: 'Counter App', binding: CounterBinding()),
+        name: '/counter',
+        page: () => CounterView(),
+        title: 'Counter App',
+        binding: CounterBinding()),
     GetPage(
         name: '/simple-navigation',
         title: 'Simple Navigation',

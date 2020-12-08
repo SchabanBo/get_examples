@@ -10,15 +10,15 @@ class PathController extends GetxController {
       return '/greens';
     }
     final g0 = (gen0.value == '/jack' || gen0.value == '/judy')
-        ? '/gellers${gen0.value}'
-        : '/greens${gen0.value}';
+        ? '/getPage/gellers${gen0.value}'
+        : '/getPage/greens${gen0.value}';
     if (gen1.value.isEmpty) {
       return '$g0';
     }
     if (gen2.value.isEmpty) {
-      return '$g0${gen1.value}';
+      return '/getPage$g0${gen1.value}';
     }
-    return '$g0${gen1.value}${gen2.value}';
+    return '/getPage$g0${gen1.value}${gen2.value}';
   }
 
   void go() => Get.offNamed(path);
