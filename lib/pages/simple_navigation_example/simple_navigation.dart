@@ -24,6 +24,10 @@ class SimpleNavigationView1 extends GetView<SimpleNavigationController1> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            Text(
+              'Go to page 2 and send the data back',
+              style: TextStyle(fontSize: 22),
+            ),
             Obx(() => Text(
                   'The result is ${controller.text.value}',
                   style: TextStyle(fontSize: 22),
@@ -64,6 +68,10 @@ class SimpleNavigationView2 extends GetView<SimpleNavigationController2> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            Text(
+              'The data is',
+              style: TextStyle(fontSize: 22),
+            ),
             Obx(() => Text(
                   '${controller.text.value}',
                   style: TextStyle(fontSize: 22),

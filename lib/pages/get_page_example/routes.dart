@@ -1,29 +1,41 @@
 import 'package:get/get.dart';
-import 'package:get_page_example/pages/get_page_example/Amy/amy_warper.dart';
-import 'package:get_page_example/pages/get_page_example/Ben/ben_warper.dart';
-import 'package:get_page_example/pages/get_page_example/Emma/emmy_warper.dart';
-import 'package:get_page_example/pages/get_page_example/Erica/erica_warper.dart';
-import 'package:get_page_example/pages/get_page_example/Jack-Bing/jack_bing_warper.dart';
-import 'package:get_page_example/pages/get_page_example/Jack/jack_warper.dart';
-import 'package:get_page_example/pages/get_page_example/Jill/jill_warper.dart';
-import 'package:get_page_example/pages/get_page_example/Judy/judy_warper.dart';
-import 'package:get_page_example/pages/get_page_example/Monica/monica_warper.dart';
-import 'package:get_page_example/pages/get_page_example/Rachel/rachel_warper.dart';
-import 'package:get_page_example/pages/get_page_example/Ross/ross_warper.dart';
-import 'package:get_page_example/pages/get_page_example/Sandra/sandra_warper.dart';
-import 'package:get_page_example/pages/get_page_example/gellers/gellers_warper.dart';
-import 'package:get_page_example/pages/get_page_example/greens/greens_warper.dart';
-import 'package:get_page_example/routes/middlewares/auth_middleware.dart';
+import 'package:get_page_example/pages/get_page_example/complex/Amy/amy_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/Ben/ben_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/Emma/emmy_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/Erica/erica_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/Jack-Bing/jack_bing_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/Jack/jack_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/Jill/jill_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/Judy/judy_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/Monica/monica_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/Rachel/rachel_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/Ross/ross_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/Sandra/sandra_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/gellers/gellers_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/greens/greens_warper.dart';
+import 'package:get_page_example/pages/get_page_example/complex/login/login_view.dart';
+import 'package:get_page_example/pages/get_page_example/get_page.dart';
+import 'package:get_page_example/pages/get_page_example/middlewares/auth_middleware.dart';
 
 class GetPageExample {
+  static GetPage getPageExample = GetPage(
+      name: '/getPage',
+      page: () => GetPageExampleView(),
+      title: 'Get Page Examples',
+      middlewares: [
+        AuthMiddleware()
+      ],
+      children: [
+        GetPage(name: '/login', title: 'Login', page: () => LoginView()),
+        GetPageExample.theGreens,
+        GetPageExample.theGellers,
+      ]);
+
   static final theGreens = GetPage(
       name: '/greens',
       title: 'GetPage & GetMiddleware (Greens)',
       page: () => GreensView(),
       binding: GreensBinding(),
-      middlewares: [
-        AuthMiddleware()
-      ],
       children: [
         GetPage(
             name: '/sandra',
@@ -76,9 +88,6 @@ class GetPageExample {
       title: 'GetPage & GetMiddleware (Gellers)',
       page: () => GellersView(),
       binding: GellersBinding(),
-      middlewares: [
-        AuthMiddleware()
-      ],
       children: [
         GetPage(
             name: '/jack',

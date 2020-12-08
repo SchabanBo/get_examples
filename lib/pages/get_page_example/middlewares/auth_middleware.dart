@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:get_page_example/pages/get_page_example/auth/auth_service.dart';
+import 'package:get_page_example/pages/get_page_example/complex/auth/auth_service.dart';
 
 class AuthMiddleware extends GetMiddleware {
   final auth = Get.find<AuthService>();
