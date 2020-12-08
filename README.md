@@ -9,30 +9,24 @@
 ## Counter App
 
 The super counter app With Getx.
+[Demo](http://getx.qlevar.de#/counter)
 [Code](https://github.com/SchabanBo/get_examples/blob/master/lib/pages/counter_example/counter_example.dart)
 
-## Simple Navigation 
+## Simple Navigation
 
 Example of simple navigation between two pages and giving a result back.
+[Demo](http://getx.qlevar.de#/simple-navigation)
 [Code](https://github.com/SchabanBo/get_examples/blob/master/lib/pages/simple_navigation_example/simple_navigation.dart)
 
 ## GetPage & GetMiddleware
 
 Example how to work with the GetPage `children` property and how dose `GetMiddleware` works and how to use them.
 
-[ToDocs](https://github.com/SchabanBo/get_examples/tree/master/docs/GetPage.md)
-[Code](https://github.com/SchabanBo/get_examples/tree/master/docs/GetPage.md)
+[Demo](http://getx.qlevar.de#/getPage)
+[Code](https://github.com/SchabanBo/get_examples/tree/master/lib/pages/get_page_example)
 
 ## GetResponsiveView
 
 Example how to work with the `GetResponsiveView` widget.
 
 [ToDocs](https://github.com/SchabanBo/get_examples/tree/master/docs/GetResponsiveView.md)
-
-##TODO:
-- [ ] Add Dialog and snakbar.
-- [ ] Change Theme.
-- [ ] Local State Widgets.
-- [ ] Add Utils.
-- [ ] GetConnect.
-- [ ] Locals.
