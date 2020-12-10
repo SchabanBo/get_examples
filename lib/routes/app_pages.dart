@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:get_page_example/pages/counter_example/counter_example.dart';
+import 'package:get_page_example/pages/dialog_snackbar/dialog-snakbars.dart';
 import 'package:get_page_example/pages/get_page_example/routes.dart';
 
 import 'package:get_page_example/pages/home/bindings/home_binding.dart';
@@ -25,6 +26,10 @@ class AppPages {
         page: () => CounterView(),
         title: 'Counter App',
         binding: CounterBinding()),
+    GetPage(
+        name: '/dialogs-snackbar',
+        title: 'Dialig & Snakbars',
+        page: () => DialigSnakbarsView()),
     GetPage(
         name: '/simple-navigation',
         title: 'Simple Navigation',

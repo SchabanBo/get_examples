@@ -23,7 +23,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get:
+  get: 3.21.2
+  #get:
+  #  path: ../getx
 
 dev_dependencies:
   flutter_test:
