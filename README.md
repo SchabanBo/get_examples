@@ -29,4 +29,4 @@ Example how to work with the GetPage `children` property and how dose `GetMiddle
 
 Example how to work with the `GetResponsiveView` widget.
 
-[ToDocs](https://github.com/SchabanBo/get_examples/tree/master/docs/GetResponsiveView.md)
+[ToDocs](https://github.com/SchabanBo/get_examples/tree/master/documentation/GetResponsiveView.md)
